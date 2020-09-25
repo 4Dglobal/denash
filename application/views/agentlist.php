@@ -12,7 +12,10 @@
 					</div>
 
 					<div class="row activity-row">
-						<div class="col-md-12 activity">Agent List</div>
+						<div class="col-md-10 activity">Agent List</div>
+            <div style="float: right;">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: right;">Add Agent</button>
+            </div>
 					</div>			
 <!-- 
           <div class="form-group has-search">
