@@ -67,9 +67,14 @@
             "MarriedUnMarried" => $data['marriage'],
             "No_of_Child" => $data['noofChild'],
             "Anniversary" => $data['weddingAniver'],
+            "Emergency_Contact_Person" => $data['emerPerson'],
+            "Relationship" => $data['relationship'],
             "Emergency_Contact" => $data['emerContact'],
             "Bloodgroup" => $data['bloodgrp'],
             "Transportation" => $data['transOffice'],
+            "Route" => $data['transRoute'],
+            "linkedin" => $data['linkedin'],
+            "facebook" => $data['facebook'],
             "Shift" => $data['selectshift']
     );
 

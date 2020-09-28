@@ -46,28 +46,32 @@
             </div>
             <div class="row" style="margin-left:2%;margin-right:2%">
             <div class="col-md-3">
-                <p >Emergency Contact Number:<span id="start">*</span></p>
+              <p>Emergency Contact Person<span id="start">*</span></p>
+              <input type="text" class="col-md-12 col-xs-12 form-control" name="emerPerson" id="emerPerson" required="">
+            </div>                
+            <div class="col-md-3">
+              <p>Relationship<span id="start">*</span></p>
+              <input type="text" class="col-md-12 col-xs-12 form-control" name="relationship" id="relationship" required="">
+            </div>
+            <div class="col-md-3">
+              <p>Emergency Contact Mobile:<span id="start">*</span></p>
                 <input class="col-md-12 col-xs-12 form-control" type="text" pattern="^\d{10}$" maxlength="10" title="Phone number should be 10 numbers" id="emerContact" name="emerContact"  required="">
-                <br>
-                <div id="MarDetails1">
-                  <p >No Of Kids:</p>
-                  <input class="col-md-12 col-xs-12 form-control" type="text" id="noofChild" name="noofChild" >
-                </div>
-                <br>
             </div>
           <div class="col-md-3">
-
-                <p >Transportaion to Office:<span id="start">*</span></p>
+                <p>Transportation to Office:<span id="start">*</span></p>
                 <select class="col-md-12 col-xs-12 form-control"  id="transOffice" name="transOffice"  required="">
                   <option style="display: none;" value="" selected>Select Transportation</option>
                   <option value="Public">Public</option>
                   <option value="Own">Own</option>
                   <option value="Office Transport">Office Transport</option>
                 </select>
-
             </div>
             <div class="col-md-3">
-                <p >Marriage Details:</p>
+                <p>Route:<span id="start">*</span></p>
+                <input type="text" class="col-md-12 col-xs-12 form-control" id="transRoute" name="transRoute">
+            </div>
+            <div class="col-md-3">
+                <p >Marital Status:</p>
                 <select class="col-md-12 col-xs-12 form-control"  onchange="viewmarriedDetails()" id="marriage" name="marriage" >
                   <option  style="display: none;" value="" selected>Select Marriage Details </option>
                   <option value="Married">Married</option>
@@ -77,18 +81,110 @@
             <div class="col-md-3">
               <div id="MarDetails">
                 <p >Wedding Aniversary:</p>
-                <input class="col-md-12 col-xs-12 form-control" type="date" id="weddingAniver" name="weddingAniver"  >
+                <input class="col-md-12 col-xs-12 form-control" type="date" id="weddingAniver" name="weddingAniver">
               </div>
             </div>
+            <div class="col-md-3">
+              <div id="MarDetails1">
+                <p>No Of Kids:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="text" id="noofChild" name="noofChild" >
+              </div>
+            </div>
+            <!-- new fields mentioned in word document -->
+            <div class="col-md-3">
+                <p >Current Team:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="text" id="currentTeam" name="currentTeam">
+            </div>
+            <div class="col-md-3">
+                <p >Designation:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="text" id="designation" name="designation">
+            </div>
+            <div class="col-md-3">
+                <p >Probation Period:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="text" id="probationPeriod" name="probationPeriod">
+            </div>
+            <div class="col-md-3">
+                <p>Probation End Date:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="date" id="probationEnd" name="probationEnd">
+            </div>
+            <div class="col-md-3">
+                <p>Joining Date:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="date" id="joiningDate" name="joiningDate">
+            </div>
+            <div class="col-md-3">
+                <p>Term Date:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="date" id="termDate" name="termDate">
+            </div>
+            <div class="col-md-3">
+                <p>Linked In:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="text" id="linkedin" name="linkedin">
+            </div>
+            <div class="col-md-3">
+                <p>Facebook:</p>
+                <input class="col-md-12 col-xs-12 form-control" type="text" id="facebook" name="facebook">
+            </div>
           </div>
-            <div  class="row" style="margin-left:2%;margin-right:2%">
 
+          <div class="row" style="margin-left:2%;margin-right:2%">
+              <!-- Documents and file uploads -->
+            <div class="col-md-4">
+              <!-- <p>Employee Photo:</p>
+              <input class="col-md-12 col-xs-12 form-control" type="file" id="emp_photo" name="emp_photo" accept=".png,.jpg,.jpeg" onchange="return fileValidation()" /> -->
+                <p>Employee Photo:</p>
+                <input type='file' id="emp_photo" name="emp_photo" accept=".png,.jpg,.jpeg" />
+                <i type="button" class="fa fa-eye view_img" aria-hidden="true" data-toggle="modal" data-target="#myModalview" style="display: none;">
+                View Image
+                </i>
+
+              <!-- The Modal -->
+              <div class="modal fade" id="myModalview">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Employee Image</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body text-center">
+                      <div id="imagePreview"></div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                    </div>
+
+                  </div>
+                </div>
+              </div>              
+              <br><br>
+            </div>
+            <div class="col-md-4">
+              <p>Resume:</p>
+              <input class="col-md-12 col-xs-12 form-control" type="file" id="resume" name="resume">
+            </div>
+            <div class="col-md-4">
+              <p>Insurance:</p>
+              <input class="col-md-12 col-xs-12 form-control" type="file" id="insurance" name="insurance">
+            </div>
+
+            <div class="col-md-4">
+              <p>Aadhar:</p>
+              <input class="col-md-12 col-xs-12 form-control" type="file" id="insurance" name="insurance">
+            </div>
+            <div class="col-md-4">
+              <p>PAN:</p>
+              <input class="col-md-12 col-xs-12 form-control" type="file" id="insurance" name="insurance">
+            </div>
+          </div>
+          <br><br>
+            <div  class="row" style="margin-left:2%;margin-right:2%">
                 <div class="col-md-6">
                   <fieldset style="border: 1px 2px solid green;">
                     <legend><h5 style="margin-left:1%;"><u>Current Residential Address<span id="start">*</span></u></h5></legend>
                     <div>
                     <div class="row">
-
                       <div class="col-md-12" style="padding-top:8%">
                         <p >Address Line 1:</p>
                         <input class="col-md-12 col-xs-12 form-control"  type="text"  id="address1" name="address1"  required="">
@@ -119,8 +215,8 @@
                     <legend><h5 style="margin-left:2%;"><u>Permanent Residential Address</u></h5></legend>
                     <div style="margin-left:5%;margin-right:5%">
                     <div class="row" >
-            <input type="checkbox" id="sameCuurent" name="sameCuurent" onclick="placevalue()">
-            <label for="sameCuurent" style="font-size:17px;padding-top:2%;"> &nbsp;&nbsp;Same Current Residential Address</label>
+                      <input type="checkbox" id="sameCuurent" name="sameCuurent" onclick="placevalue()">
+                      <label for="sameCuurent" style="font-size:17px;padding-top:2%;"> &nbsp;&nbsp;Same Current Residential Address</label>
                       <div class="col-md-12">
                         <p >Address Line 1:</p>
                         <input class="col-md-12 col-xs-12 form-control"  type="text"  id="PersAddress1" name="PersAddress1" >
@@ -142,6 +238,7 @@
                         <input class="col-md-12 col-xs-12 form-control"  type="text" maxlength="6"  id="Perspincode" name="Perspincode" >
                       </div>
                     </div>
+
                   </div>
                   </fieldset>
                 </div>
@@ -150,54 +247,53 @@
 
 
               <div class="row" style="margin-left:2%;margin-right:2%">
-				<div class="col-md-12" style="text-align:center;padding-top:5%;color:#3fc98e"><h3><span  class="fa fa-graduation-cap" style="font-size:35px;" aria-hidden="true"></span>&nbsp;&nbsp;Shift Details</h3><br></div>
-                <div class="col-md-12" >
-                  <p >Shift:</p>
-				  <select id="selectshift" name="selectshift" class="col-md-12 col-xs-12 form-control">
-					<option value="shift1">Shift 1</option>
-					<option value="shift2" selected>Shift 2</option>
-					<option value="shift3">Shift 3</option>
-				  </select>
-                </div>
+        				<div class="col-md-12" style="text-align:center;padding-top:5%;color:#3fc98e"><h3><span  class="fa fa-graduation-cap" style="font-size:35px;" aria-hidden="true"></span>&nbsp;&nbsp;Shift Details</h3><br></div>
+                    <div class="col-md-12" >
+                      <p >Shift:</p>
+            				  <select id="selectshift" name="selectshift" class="col-md-12 col-xs-12 form-control">
+              					<option value="shift1">Shift 1</option>
+              					<option value="shift2" selected>Shift 2</option>
+              					<option value="shift3">Shift 3</option>
+            				  </select>
+                    </div>
 
-                <div class="col-md- table-responsive emp-table" >
-                  <table class="table" id="tabledata">
-                    <thead>
-                      <tr>
-                        <th scope="col">Shift</th>
-                        <th scope="col">Working Time</th>
-                        <th scope="col">Start - End Time</th>
-						<th scope="col">Break 1</th>
-                        <th scope="col">Break 2</th>
-						<th scope="col">Break 3</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-						<tr>
-                        <td scope="col">Shift 2</td>
-                        <td scope="col">9 Hours</td>
-                        <td scope="col">1 PM - 10 PM</td>
-						<td scope="col">15 Mins</td>
-                        <td scope="col">30 Mins</td>
-						<td scope="col">15 Mins</td>
-                      </tr>
-					</tbody>
-                  </table>
-                </div>
-
-			</div>
+                    <div class="col-md- table-responsive emp-table" >
+                      <table class="table" id="tabledata">
+                        <thead>
+                          <tr>
+                            <th scope="col">Shift</th>
+                            <th scope="col">Working Time</th>
+                            <th scope="col">Start - End Time</th>
+      					            <th scope="col">Break 1</th>
+                            <th scope="col">Break 2</th>
+      					            <th scope="col">Break 3</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+      					          <tr>
+                            <td scope="col">Shift 2</td>
+                            <td scope="col">9 Hours</td>
+                            <td scope="col">1 PM - 10 PM</td>
+      					            <td scope="col">15 Mins</td>
+                            <td scope="col">30 Mins</td>
+      					            <td scope="col">15 Mins</td>
+                          </tr>
+      				          </tbody>
+                      </table>
+                    </div>
+			         </div>
 
                 <div align="col-md-12" style="padding-top:5%;padding-left: 40%">
                     <input type="submit" class="check-in" style="margin-left:10px;float:left">
                     <input type="reset" class="check-in" style="background-color:red;">
                 </div>
             </div>
-
           </form>
           </div>
         </div>
 
-<script>
+<script>  
+
 $(document).ready(function() {
   $('#userid').select2({width: 'resolve'});
 });
@@ -223,8 +319,11 @@ function viewdata(data){
       $('#phno').val(data[0]['Contact_phone']);
       $('#personalEmail').val(data[0]['Current_Address1Current_Address1']);
       $('#emerContact').val(data[0]['Emergency_Contact']);
+      $('#relationship').val(data[0]['Relationship']);
+      $('#emerPerson').val(data[0]['Emergency_Contact_Person']);
       $('#noofChild').val(data[0]['No_of_Child']);
       $('#transOffice').val(data[0]['Transportation']);
+      $('#transRoute').val(data[0]['Route']);
       $('#marriage').val(data[0]['MarriedUnMarried']);
       $('#weddingAniver').val(data[0]['Anniversary']);
       $('#address1').val(data[0]['Current_Address1']);
@@ -237,9 +336,34 @@ function viewdata(data){
       $('#Perslandmark').val(data[0]['Perm_Landmark']);
       $('#Perscity').val(data[0]['Perm_City']);
       $('#Perspincode').val(data[0]['Perm_Pincode']);
+      $('#currentTeam').val(data[0]['currentTeam']);
+      $('#designation').val(data[0]['designation']);
+      $('#probationPeriod').val(data[0]['probationPeriod']);
+      $('#probationEnd').val(data[0]['probationEnd']);
+      $('#joiningDate').val(data[0]['joiningDate']);
+      $('#termDate').val(data[0]['termDate']);
+      $('#linkedin').val(data[0]['linkedin']);
+      $('#facebook').val(data[0]['facebook']);
       $('#selectshift').val(data[0]['Shift']);
-
     }
   });
 }
+
+$('#emp_photo').on("change", function(){
+    if($('#emp_photo').val() == '') $('.view_img').hide();
+     var $preview = $('#imagePreview').empty();
+    if (this.files) $.each(this.files, readAndPreview);
+
+    function readAndPreview(i, file) {
+      if (!/\.(jpe?g|png|gif)$/i.test(file.name)){
+        return alert(file.name +" is not an image");
+      }
+      $('.view_img').show();
+      var reader = new FileReader();
+      $(reader).on("load", function() {
+        $preview.append($("<img/>", {src:this.result, height:100}));
+      });
+      reader.readAsDataURL(file);
+    }
+  });
 </script>

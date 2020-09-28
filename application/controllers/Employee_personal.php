@@ -56,6 +56,9 @@ class Employee_personal extends CI_Controller {
 
 
 	public function addEmp(){
+		echo '<pre>';
+		print_r($_FILES);
+		echo '</pre>';die;
 		$insertstatus = $this->empdetailsModel->addDetails($_POST);
 		redirect('empinfoControl/index');
 
